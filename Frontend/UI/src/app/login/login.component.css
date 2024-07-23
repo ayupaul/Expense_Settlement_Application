@@ -1,0 +1,9 @@
+.base {
+  display: flex;
+  justify-content: center; /* Center the child horizontally */
+  align-items: center; /* Center the child vertically */
+  height: 100vh; /* Optional: Make the container take up the full viewport height */
+}
+.form-label {
+  color: black
+}

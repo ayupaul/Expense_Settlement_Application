@@ -1,0 +1,50 @@
+<div class="base">
+    <div class="login">
+      <form [formGroup]="userForm" (ngSubmit)="onUpdate()">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="Enter your Email"
+              formControlName="email"
+            />
+            <span
+              *ngIf="(userForm.controls['email'].touched || userForm.controls['email'].dirty) && userForm.controls['email'].invalid"
+              style="color: red;"
+            >Enter Correct Email</span>
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputUserName1" class="form-label">UserName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputUserName1"
+            placeholder="Enter your UserName"
+            formControlName="userName"
+          />
+          <span
+            *ngIf="(userForm.controls['userName'].touched || userForm.controls['userName'].dirty) && userForm.controls['userName'].invalid"
+            style="color: red;"
+          >UserName is required</span>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputUserAmount1" class="form-label">Amount</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputUserAmount1"
+            placeholder="Enter your Amount"
+            formControlName="amount"
+          />
+          <span
+            *ngIf="(userForm.controls['amount'].touched || userForm.controls['amount'].dirty) && userForm.controls['amount'].invalid"
+            style="color: red;"
+          >Amount is required</span>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+      </form>
+    </div>
+  </div>
+  

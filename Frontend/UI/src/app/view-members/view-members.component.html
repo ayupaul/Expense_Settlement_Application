@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <thead>
+    <tr class="text-center">
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <ng-container *ngIf="!isUserInGroup(user)">
+        <td>{{ user.email }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="onAdd(user.id)">Add</button>
+        </td>
+      </ng-container>
+      <ng-container *ngIf="isUserInGroup(user)">
+        <td>{{ user.email }}</td>
+        <td><button class="btn btn-danger">Remove</button></td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>

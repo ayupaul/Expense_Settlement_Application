@@ -1,0 +1,19 @@
+<div class="card text-center">
+    <div class="card-header">
+      {{ expenseDetail.expenseName }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">
+        Amount of expense: {{ expenseDetail.expenseAmount | currency : "INR" }}
+      </h5>
+      <p class="card-text">{{ expenseDetail.description }}</p>
+      <div *ngIf="expenseSettled">
+        <p>This expense is settled now from everyone</p>
+        <button (click)="closeExpense()">Close the expense now</button>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      Expense Date: {{ expenseDetail.expenseDate }}
+    </div>
+  </div>
+  

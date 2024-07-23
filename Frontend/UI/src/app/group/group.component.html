@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="card shadow-lg" style="width: 20rem; border-radius: 15px;">
+    <div class="card-body">
+      <h5 class="card-title">{{ group.groupName }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Created on {{ group.createdDate }}</h6>
+      <p class="card-text">{{ group.description }}</p>
+      <div class="d-flex justify-content-between">
+        <a [routerLink]="'/viewMember/'+group.groupId" class="btn btn-primary btn-custom">View Members</a>
+        <a [routerLink]="'/viewExpense/'+group.groupId" class="btn btn-primary btn-custom">View Your Expenses</a>
+      </div>
+    </div>
+  </div>
+</div>

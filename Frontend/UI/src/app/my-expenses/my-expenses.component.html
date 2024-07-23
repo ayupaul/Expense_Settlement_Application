@@ -1,0 +1,23 @@
+<div class="d-flex flex-column align-items-center justify-content-start" style="height: 100vh; padding-top: 2rem;">
+  <div class="d-flex flex-row justify-content-center mb-3">
+    <div class="card shadow-lg mx-3" style="width: 18rem;">
+      <ng-container *ngIf="expensesPaidByMe?.length > 0" class="card-body">
+        <h5 class="card-title">Expenses Paid By Me</h5>
+        <div *ngFor="let paid of expensesPaidByMe">
+          <a [routerLink]="'/paidExpense/' + paid.expenseId" class="btn btn-primary mb-2">{{ paid.expenseName }}</a>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="card shadow-lg mx-3" style="width: 18rem;">
+      <ng-container *ngIf="expensesThatIOwe?.length > 0" class="card-body text-center">
+        <h5 class="card-title">Expenses That I Owe</h5>
+        <div *ngFor="let split of expensesThatIOwe">
+          <a [routerLink]="'/oweExpense/' + split.expenseId" class="btn btn-primary mb-2">{{ split.expenseName }}</a>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <button (click)="addNewExpense()" class="btn btn-success mt-3">Add New Expense</button>
+</div>

@@ -1,0 +1,12 @@
+<table class="table table-striped">
+    <thead>
+      <tr class="text-center">
+        <th>My Groups</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let group of myGroups" class="text-center">
+        <td><a class="btn btn-primary" routerLink="/myGroup" [state]="{groupDetails:group}">{{group.groupName}}</a></td>  
+      </tr>
+    </tbody>
+  </table>

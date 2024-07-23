@@ -1,0 +1,34 @@
+<div class="base">
+    <div class="login">
+      <form [formGroup]="groupForm" (ngSubmit)="onAdd()">
+        <div class="mb-3">
+          <label for="exampleInputName" class="form-label">Group Name</label>
+  
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputName"
+            placeholder="Enter your Group Name"
+            formControlName="groupName"
+          />
+          <span *ngIf="(groupForm.controls['groupName'].touched || groupForm.controls['groupName'].dirty) && groupForm.controls['groupName'].invalid" style="color: red;">Required Field</span>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputDescription" class="form-label">Description</label>
+    
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputDescription"
+              placeholder="Enter your Group Description"
+              formControlName="description"
+            />
+            <span *ngIf="(groupForm.controls['description'].touched || groupForm.controls['description'].dirty) && groupForm.controls['description'].invalid" style="color: red;">Required Field</span>
+          </div>
+         
+       
+        <button type="submit" class="btn btn-primary" [disabled]="groupForm.invalid">Submit</button>
+      </form>
+    </div>
+  </div>
+  

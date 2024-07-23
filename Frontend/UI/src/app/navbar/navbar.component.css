@@ -1,0 +1,20 @@
+/* Add this CSS to your styles.css file */
+.custom-navbar {
+    background-color: #3498db; /* Change the background color as needed */
+}
+
+.custom-navbar .navbar-brand {
+    color: #ffffff; /* Change the text color for the navbar brand */
+}
+
+.custom-navbar .navbar-brand:hover {
+    color: #ffffff; /* Change the text color on hover as needed */
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    color: #ffffff; /* Change the text color for the links */
+}
+
+.custom-navbar .navbar-nav .nav-link:hover {
+    color: #ffffff; /* Change the text color on hover as needed */
+}

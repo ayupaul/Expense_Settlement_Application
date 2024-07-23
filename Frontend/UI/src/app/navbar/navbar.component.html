@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="" (click)="onLogout()"
+      >Expense Settlement Application</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            (click)="onLogout()"
+            href=""
+            class="nav-link active"
+            aria-current="page"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="email"
+            routerLink="/dashboard"
+            class="nav-link active"
+            aria-current="page"
+            >Dashboard</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            *ngIf="email"
+            routerLink="/dashboard"
+            class="nav-link active"
+            aria-current="page"
+            >Welcome {{ email }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="email"
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/add new group"
+            >Create New Group</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="actualAmount"
+            class="nav-link active"
+            aria-current="page"
+            routerLink=""
+            >Amount: {{ actualAmount | currency : "INR" }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="role=='Admin'"
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/viewAllUsers"
+            >View All Users</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="email"
+            class="nav-link active"
+            href=""
+            aria-current="page"
+            (click)="onLogout()"
+            >Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

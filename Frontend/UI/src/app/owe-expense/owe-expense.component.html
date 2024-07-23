@@ -1,0 +1,19 @@
+<div class="card text-center">
+  <div class="card-header">
+    {{ expenseDetail.expenseName }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
+      Amount of expense: {{ expenseDetail.expenseAmount | currency : "INR" }}
+    </h5>
+    <h6 class="card-title">
+      Amount You have to pay: {{ expenseDetail.amountOwe | currency : "INR" }}
+    </h6>
+    <p class="card-text">{{ expenseDetail.description }}</p>
+
+    <a (click)="onPay(expenseDetail.amountOwe)" class="btn btn-primary">Click Here To Pay</a>
+  </div>
+  <div class="card-footer text-muted">
+    Expense Date: {{ expenseDetail.expenseDate }}
+  </div>
+</div>
